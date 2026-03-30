@@ -11,10 +11,10 @@ COPY --from=agentgateway /app/agentgateway /app/agentgateway
 RUN chmod +x /app/agentgateway
 
 WORKDIR /app
-COPY config.yaml /config.yaml
+
+COPY config.yaml /data/config.yaml
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 ENV PATH="/app:${PATH}"
-
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
