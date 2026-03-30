@@ -28,3 +28,5 @@ To connect an MCP client, point it at `https://your-app.up.railway.app/`.
 The template starts with a blank slate — no listeners, routes, or backends. Everything is configured via the UI after deployment.
  
 To make static changes, fork this repo, edit `config.yaml` and redeploy. See the agentgateway [configuration docs](https://agentgateway.dev/docs/standalone/latest/configuration/overview/) for the full schema.
+
+![agentgateway config](agentgateway-config.png)
