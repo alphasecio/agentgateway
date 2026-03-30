@@ -12,7 +12,7 @@ RUN chmod +x /app/agentgateway
 
 WORKDIR /app
 
-COPY config.yaml /data/config.yaml.default
+COPY config.yaml /etc/agentgateway/config.yaml.default
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
