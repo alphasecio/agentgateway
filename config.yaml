@@ -1,0 +1,7 @@
+config:
+  adminAddr: "0.0.0.0:15000"
+  logging:
+    level: "warn"
+binds:
+- port: 3000
+  listeners: []
