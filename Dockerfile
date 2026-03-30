@@ -12,9 +12,12 @@ RUN chmod +x /app/agentgateway
 
 WORKDIR /app
 
-COPY config.yaml /data/config.yaml
+COPY config.yaml /data/config.yaml.default
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 ENV PATH="/app:${PATH}"
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["/entrypoint.sh"]
